@@ -6,12 +6,12 @@
 
     <!-- add servlet -->
     <servlet>
-        <servlet-name>add</servlet-name>
+        <servlet-name>AddServlet</servlet-name>
         <servlet-class>app.servlets.AddServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>add</servlet-name>
+        <servlet-name>AddServlet</servlet-name>
         <url-pattern>/add</url-pattern>
     </servlet-mapping>
 
