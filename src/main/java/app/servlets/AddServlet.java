@@ -46,9 +46,6 @@ public class AddServlet extends HttpServlet {
         String cause = req.getParameter("cause");
         Employee employee = new Employee(surname, name, patronymic, position, date, time, cause);
 
-        System.out.println(employee.toString());
-        System.out.println(name +"\n"+ surname +"\n"+ patronymic +"\n"+ position +"\n"+ date +"\n"+ time +"\n"+ cause);
-
         Employee employee1 = employeeService.add(employee);
 
         req.setAttribute("employee", employee1.getSurname());

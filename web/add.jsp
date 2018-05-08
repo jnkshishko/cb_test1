@@ -14,7 +14,7 @@
         <div>
             <%
                 if (request.getAttribute("employee") != null) {
-                    out.println("<p>Сотрудник '" + request.getAttribute("employee") + "' added!</p>");
+                    out.println("<p>Сотрудник '" + request.getAttribute("employee") + "' добавлен!</p>");
                 }
             %>
         </div>

@@ -126,7 +126,7 @@ public class Employee {
                 name + " " +
                 patronymic + "\n" +
                 position + "\n" +
-                date + " " +
+                date + "\n" +
                 time + "\n" +
                 cause;
     }

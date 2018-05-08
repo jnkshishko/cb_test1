@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="app.model.Employee" %><%--
   Created by IntelliJ IDEA.
   User: Eugenio
   Date: 05.05.2018
@@ -10,7 +11,20 @@
 <head>
     <title>Список сотрудников</title>
 </head>
-<body>
-list
-</body>
+    <body>
+        <div>
+            <%
+                List<Employee> employees = (List<Employee>) request.getAttribute("employees");
+
+                if (employees != null && !employees.isEmpty()) {
+                    for (Employee s : employees) {
+                        out.println("<li>" + s.toString() + "</li>");
+                    }
+                }
+            %>
+        </div>
+        <div>
+            list
+        </div>
+    </body>
 </html>

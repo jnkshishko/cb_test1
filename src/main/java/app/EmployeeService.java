@@ -27,7 +27,7 @@ public class EmployeeService {
 
     public List<Employee> getAll() {
 
-        TypedQuery<Employee> namedQuery = em.createNamedQuery("Employee.getAll", Employee.class);
+        TypedQuery<Employee> namedQuery = em.createQuery("SELECT e FROM Employee e", Employee.class);
         return namedQuery.getResultList();
 
     }

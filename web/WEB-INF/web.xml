@@ -17,12 +17,12 @@
 
     <!-- list servlet -->
     <servlet>
-        <servlet-name>list</servlet-name>
+        <servlet-name>ListServlet</servlet-name>
         <servlet-class>app.servlets.ListServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>list</servlet-name>
+        <servlet-name>ListServlet</servlet-name>
         <url-pattern>/list</url-pattern>
     </servlet-mapping>
 
