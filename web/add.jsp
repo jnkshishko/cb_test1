@@ -14,7 +14,7 @@
         <div>
             <%
                 if (request.getAttribute("employee") != null) {
-                    out.println("<p>Сотрудник '" + request.getAttribute("employee") + "' добавлен!</p>");
+                    out.println("<p><h3>Сотрудник '" + request.getAttribute("employee") + "' добавлен!</h3></p>");
                 }
             %>
         </div>
@@ -48,7 +48,7 @@
                         <input type="text" name="cause" required style="position: absolute; left: 190px;"><br />
                     </label>
 
-                    <button type="submit">Добавить</button>
+                    <button type="submit">Добавить</button> <button onclick="location.href='index.html'">На главную</button>
                 </form>
         </div>
     </body>

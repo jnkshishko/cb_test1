@@ -14,7 +14,6 @@
     <body>
             <div>
                 <form action="list" method="post">
-                    <div>
                         <label for="surname">Фамилия:</label>
                         <select id="surname" name="surname" required style="position: absolute; left: 100px;">
                             <%
@@ -33,8 +32,6 @@
                                 }
                             %>
                         </select><br/>
-                    </div>
-                    <div>
                         <label for="name">Имя:</label>
                         <select id="name" name="name" required style="position: absolute; left: 100px;">
                             <%
@@ -53,8 +50,6 @@
                                 }
                             %>
                         </select><br/>
-                    </div>
-                    <div>
                         <label for="patronymic">Отчество:</label>
                         <select id="patronymic" name="patronymic" required style="position: absolute; left: 100px;">
                             <%
@@ -73,8 +68,6 @@
                                 }
                             %>
                         </select><br/>
-                    </div>
-                    <div>
                         <label for="position">Должность:</label>
                         <select id="position" name="position" style="position: absolute; left: 100px;">
                             <%
@@ -93,11 +86,9 @@
                                 }
                             %>
                         </select><br/>
-                    </div>
-                    <div>
                         <button type="submit">Найти</button>
-                    </div>
                 </form>
+                <button onclick="location.href='index.html'">На главную</button>
             </div>
         <div>
             <h3>Искомый сотрудник:</h3>
