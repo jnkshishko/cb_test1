@@ -16,31 +16,79 @@
                 <form action="list" method="post">
                     <div>
                         <label for="surname">Фамилия:</label>
-                        <input type="text" id="surname" name="surname" required style="position: absolute; left: 100px;">
+                        <select id="surname" name="surname" required style="position: absolute; left: 100px;">
+                            <%
+                                List<Employee> listAllForSurnames = (List<Employee>) request.getAttribute("employees");
+                                Set<String> surnames = new HashSet<>();
+                                if (listAllForSurnames != null && !listAllForSurnames.isEmpty()) {
+                                    for (Employee s : listAllForSurnames) {
+                                        surnames.add(s.getSurname());
+                                    }
+                                }
+                                Iterator<String> iteratorSurnames = surnames.iterator();
+                                while(iteratorSurnames.hasNext()){
+                            %>
+                            <option><%=iteratorSurnames.next() %></option>
+                            <%
+                                }
+                            %>
+                        </select><br/>
                     </div>
                     <div>
                         <label for="name">Имя:</label>
-                        <input type="text" id="name" name="name" required style="position: absolute; left: 100px;"><br/>
+                        <select id="name" name="name" required style="position: absolute; left: 100px;">
+                            <%
+                                List<Employee> listAllForNames = (List<Employee>) request.getAttribute("employees");
+                                Set<String> names = new HashSet<>();
+                                if (listAllForNames != null && !listAllForNames.isEmpty()) {
+                                    for (Employee s : listAllForNames) {
+                                        names.add(s.getName());
+                                    }
+                                }
+                                Iterator<String> iteratorNames = names.iterator();
+                                while(iteratorNames.hasNext()){
+                            %>
+                            <option><%=iteratorNames.next() %></option>
+                            <%
+                                }
+                            %>
+                        </select><br/>
                     </div>
                     <div>
                         <label for="patronymic">Отчество:</label>
-                        <input type="text" id="patronymic" name="patronymic" required style="position: absolute; left: 100px;"><br/>
+                        <select id="patronymic" name="patronymic" required style="position: absolute; left: 100px;">
+                            <%
+                                List<Employee> listAllForPatronymic = (List<Employee>) request.getAttribute("employees");
+                                Set<String> patronymic = new HashSet<>();
+                                if (listAllForPatronymic != null && !listAllForPatronymic.isEmpty()) {
+                                    for (Employee s : listAllForPatronymic) {
+                                        patronymic.add(s.getPatronymic());
+                                    }
+                                }
+                                Iterator<String> iteratorPatronymic = patronymic.iterator();
+                                while(iteratorPatronymic.hasNext()){
+                            %>
+                            <option><%=iteratorPatronymic.next() %></option>
+                            <%
+                                }
+                            %>
+                        </select><br/>
                     </div>
                     <div>
                         <label for="position">Должность:</label>
                         <select id="position" name="position" style="position: absolute; left: 100px;">
                             <%
-                                List<Employee> listAll = (List<Employee>) request.getAttribute("employees");
+                                List<Employee> listAllForPositions = (List<Employee>) request.getAttribute("employees");
                                 Set<String> positions = new HashSet<>();
-                                if (listAll != null && !listAll.isEmpty()) {
-                                    for (Employee s : listAll) {
+                                if (listAllForPositions != null && !listAllForPositions.isEmpty()) {
+                                    for (Employee s : listAllForPositions) {
                                         positions.add(s.getPosition());
                                     }
                                 }
-                                Iterator<String> it = positions.iterator();
-                                while(it.hasNext()){
+                                Iterator<String> iteratorPositions = positions.iterator();
+                                while(iteratorPositions.hasNext()){
                             %>
-                            <option><%=it.next() %></option>
+                            <option><%=iteratorPositions.next() %></option>
                             <%
                                 }
                             %>
