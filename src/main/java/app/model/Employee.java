@@ -6,10 +6,11 @@ import java.util.Date;
 
 @Entity
 @Table(name = "employee")
+@SequenceGenerator(allocationSize = 1, name = "commonsequence", sequenceName = "commonsequence")
 public class Employee implements Serializable{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "commonsequence")
     @Column(name = "id")
     private Long id;
 
