@@ -130,12 +130,12 @@ public class Employee implements Serializable{
 
     @Override
     public String toString() {
-        return  surname + " " +
+        return  "ФИО: " + surname + " " +
                 name + " " +
                 patronymic + "\n" +
-                position + "\n" +
-                date + "\n" +
-                time + "\n" +
-                cause;
+                " ДОЛЖНОСТЬ: " + position + "\n" +
+                " ВРЕМЯ: " + date + "  /  \n" +
+                " СКОЛЬКО ОТСУТСТВОВАЛ: " + time + " минут \n" +
+                " ПРИЧИНА ОТСУТСТВИЯ: " + cause;
     }
 }

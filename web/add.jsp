@@ -21,31 +21,31 @@
         <div>
                 <form action="add" method="post">
                     <label>Фамилия:
-                        <input type="text" name="surname"><br/>
+                        <input type="text" name="surname" style="position: absolute; left: 190px;"><br/>
                     </label>
 
                     <label>Имя:
-                        <input type="text" name="name"><br/>
+                        <input type="text" name="name" required style="position: absolute; left: 190px;"><br/>
                     </label>
 
                     <label>Отчество:
-                        <input type="text" name="patronymic"><br/>
+                        <input type="text" name="patronymic" required style="position: absolute; left: 190px;"><br/>
                     </label>
 
                     <label>Должность:
-                        <input type="text" name="position"><br/>
+                        <input type="text" name="position" required style="position: absolute; left: 190px;"><br/>
                     </label>
 
                     <label>Дата отсутствия:
-                        <input type="date" name="date"><br/>
+                        <input type="date" name="date" required style="position: absolute; left: 190px;"><br/>
                     </label>
 
                     <label>Время отсутствия(минут):
-                        <input type="number" name="time"><br/>
+                        <input type="number" name="time" required style="position: absolute; left: 190px;"><br/>
                     </label>
 
                     <label>Причина отсутствия:
-                        <input type="text" name="cause"><br />
+                        <input type="text" name="cause" required style="position: absolute; left: 190px;"><br />
                     </label>
 
                     <button type="submit">Добавить</button>
