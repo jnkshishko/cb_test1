@@ -40,15 +40,14 @@ public class AddServlet extends HttpServlet {
         String surname = req.getParameter("surname");
         String patronymic = req.getParameter("patronymic");
         String position = req.getParameter("position");
-        System.out.println(req.getParameter("date"));
         Date date = parseDate(req.getParameter("date"));
         Long time = Long.parseLong(req.getParameter("time"));
         String cause = req.getParameter("cause");
         Employee employee = new Employee(surname, name, patronymic, position, date, time, cause);
 
-        Employee employee1 = employeeService.add(employee);
+        Employee createdEmployee = employeeService.add(employee);
 
-        req.setAttribute("employee", employee1.getSurname());
+        req.setAttribute("employee", createdEmployee.getSurname());
         doGet(req, resp);
     }
 

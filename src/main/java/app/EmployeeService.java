@@ -19,9 +19,14 @@ public class EmployeeService {
 
     }
 
-    public Employee getEmployee(Employee employee) {
+    public List<Employee> getEmployee(Employee employee) {
 
-        return em.find(Employee.class, employee);
+        String query = "SELECT e FROM Employee e WHERE e.surname = :surname AND e.name = :name AND e.patronymic = :patronymic AND e.position = :position";
+        TypedQuery<Employee> namedQuery = em.createQuery(query, Employee.class).setParameter("surname", employee.getSurname())
+                                        .setParameter("name", employee.getName()).setParameter("patronymic", employee.getPatronymic())
+                                        .setParameter("position", employee.getPosition());
+
+        return namedQuery.getResultList();
 
     }
 

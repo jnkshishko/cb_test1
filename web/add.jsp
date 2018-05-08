@@ -48,7 +48,7 @@
                         <input type="text" name="cause"><br />
                     </label>
 
-                    <button type="submit">Submit</button>
+                    <button type="submit">Добавить</button>
                 </form>
         </div>
     </body>

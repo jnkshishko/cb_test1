@@ -13,6 +13,45 @@
 </head>
     <body>
         <div>
+            <form action="list" method="post">
+                <label>Фамилия:
+                    <input type="text" name="surname" required>
+                </label>
+
+                <label>Имя:
+                    <input type="text" name="name" required><br/>
+                </label>
+
+                <label>Отчество:
+                    <input type="text" name="patronymic" required><br/>
+                </label>
+
+                <label>Должность:
+                    <input type="text" name="position" required><br/>
+                </label>
+                <button type="submit">Найти</button>
+            </form>
+        </div>
+        <div>
+            Искомый сотрудник:
+            <%
+                if (request.getAttribute("foundEmployee") != null) {
+                    List<Employee> foundEmployee = (List<Employee>) request.getAttribute("foundEmployee");
+
+                    if (foundEmployee != null && !foundEmployee.isEmpty()) {
+                        for (Employee f : foundEmployee) {
+                            out.println("<li>" + f.toString() + "</li>");
+                        }
+                    } else {
+                        out.println("Сотрудник не найден");
+                    }
+                }
+            %>
+        </div>
+        <div>
+            <b>*****************************************************************************</b>
+        </div>
+        <div>
             <%
                 List<Employee> employees = (List<Employee>) request.getAttribute("employees");
 
@@ -24,7 +63,7 @@
             %>
         </div>
         <div>
-            list
+
         </div>
     </body>
 </html>

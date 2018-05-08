@@ -31,11 +31,22 @@ public class ListServlet extends HttpServlet {
         requestDispatcher.forward(req, resp);
     }
 
-//    @POST
-//    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//
-//
-//
-//    }
+    @POST
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        req.setCharacterEncoding("UTF-8");
+        String name = req.getParameter("name");
+        String surname = req.getParameter("surname");
+        String patronymic = req.getParameter("patronymic");
+        String position = req.getParameter("position");
+
+        Employee employee = new Employee(surname, name, patronymic, position);
+
+        List<Employee> employeeList = employeeService.getEmployee(employee);
+
+        req.setAttribute("foundEmployee", employeeList);
+        doGet(req, resp);
+
+    }
 
 }

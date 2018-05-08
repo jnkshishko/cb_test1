@@ -1,11 +1,12 @@
 package app.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "employee")
-public class Employee {
+public class Employee implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,6 +35,13 @@ public class Employee {
     private String cause;
 
     public Employee() {
+    }
+
+    public Employee(String surname, String name, String patronymic, String position) {
+        this.surname = surname;
+        this.name = name;
+        this.patronymic = patronymic;
+        this.position = position;
     }
 
     public Employee(String surname, String name, String patronymic, String position, Date date, Long time, String cause) {
